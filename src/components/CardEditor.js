@@ -30,7 +30,7 @@ class CardEditor extends Component {
           <TextareaAutosize
             autoFocus
             className="Edit-Card-Textarea"
-            placeholder="Enter the text for this card..."
+            placeholder="Bu kart için başlık girin..."
             value={text}
             onChange={this.handleChangeText}
             onKeyDown={this.onEnter}
@@ -38,7 +38,7 @@ class CardEditor extends Component {
         </div>
         <EditButtons
           handleSave={() => onSave(text)}
-          saveLabel={adding ? "Add card" : "Save"}
+          saveLabel={adding ? "Kart Ekle" : "Kaydet"}
           handleDelete={onDelete}
           handleCancel={onCancel}
         />

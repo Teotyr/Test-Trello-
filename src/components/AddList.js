@@ -40,7 +40,7 @@ class AddList extends Component {
 
         <EditButtons
           handleSave={this.createList}
-          saveLabel={"Add list"}
+          saveLabel={"Listeye Ekle"}
           handleCancel={toggleAddingList}
         />
       </div>

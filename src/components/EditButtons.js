@@ -19,7 +19,7 @@ const EditButtons = ({ handleSave, saveLabel, handleDelete, handleCancel }) => (
         style={{ backgroundColor: "#EA2525", marginLeft: 0 }}
         onClick={handleDelete}
       >
-        Delete
+        Sil
       </div>
     )}
     <div tabIndex="0" className="Edit-Button-Cancel" onClick={handleCancel}>

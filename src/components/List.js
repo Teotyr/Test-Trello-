@@ -14,13 +14,13 @@ class List extends Component {
   state = {
     editingTitle: false,
     title: this.props.list.title,
-    addingCard: false
+    addingCard: false,
   };
 
   toggleAddingCard = () =>
     this.setState({ addingCard: !this.state.addingCard });
 
-  addCard = async cardText => {
+  addCard = async (cardText) => {
     const { listId, dispatch } = this.props;
 
     this.toggleAddingCard();
@@ -29,14 +29,14 @@ class List extends Component {
 
     dispatch({
       type: "ADD_CARD",
-      payload: { cardText, cardId, listId }
+      payload: { cardText, cardId, listId },
     });
   };
 
   toggleEditingTitle = () =>
     this.setState({ editingTitle: !this.state.editingTitle });
 
-  handleChangeTitle = e => this.setState({ title: e.target.value });
+  handleChangeTitle = (e) => this.setState({ title: e.target.value });
 
   editListTitle = async () => {
     const { listId, dispatch } = this.props;
@@ -46,17 +46,17 @@ class List extends Component {
 
     dispatch({
       type: "CHANGE_LIST_TITLE",
-      payload: { listId, listTitle: title }
+      payload: { listId, listTitle: title },
     });
   };
 
   deleteList = async () => {
     const { listId, list, dispatch } = this.props;
 
-    if (window.confirm("Are you sure to delete this list?")) {
+    if (window.confirm("Bu listeyi silmek istediğinizden emin misiniz?")) {
       dispatch({
         type: "DELETE_LIST",
-        payload: {listId, cards: list.cards}
+        payload: { listId, cards: list.cards },
       });
     }
   };
@@ -111,8 +111,11 @@ class List extends Component {
                       adding
                     />
                   ) : (
-                    <div className="Toggle-Add-Card" onClick={this.toggleAddingCard}>
-                      <ion-icon name="add" /> Add a card
+                    <div
+                      className="Toggle-Add-Card"
+                      onClick={this.toggleAddingCard}
+                    >
+                      <ion-icon name="add" /> Kart Ekle
                     </div>
                   )}
                 </div>
@@ -126,7 +129,7 @@ class List extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  list: state.listsById[ownProps.listId]
+  list: state.listsById[ownProps.listId],
 });
 
 export default connect(mapStateToProps)(List);

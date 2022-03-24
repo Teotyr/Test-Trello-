@@ -76,7 +76,7 @@ class Board extends Component {
                     onClick={this.toggleAddingList}
                     className="Add-List-Button"
                   >
-                    <ion-icon name="add" /> Add a list
+                    <ion-icon name="add" /> Başka Liste Ekleyin
                   </div>
                 )}
               </div>

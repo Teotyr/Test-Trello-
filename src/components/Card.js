@@ -38,7 +38,7 @@ class Card extends Component {
   deleteCard = async () => {
     const { listId, card, dispatch } = this.props;
 
-    if (window.confirm("Are you sure to delete this card?")) {
+    if (window.confirm("Bu kartı silmek istediğinizden emin misiniz?")) {
       dispatch({
         type: "DELETE_CARD",
         payload: { cardId: card._id, listId }
